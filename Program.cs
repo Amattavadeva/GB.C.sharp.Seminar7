@@ -98,5 +98,5 @@ for (int i = 0; i < mass.GetLength(1); i++)
         average = summ[i] / mass.GetLength(0);
     }
     Console.Write($"Сумма по столбцу {i+1}: {summ[i]}");
-    Console.WriteLine($"\t Среднее по столбцу {i+1}: {Math.Round(average, 2)}");
+    Console.WriteLine($"\t Среднее арифметическое по столбцу {i+1}: {Math.Round(average, 2)}");
 }
