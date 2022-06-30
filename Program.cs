@@ -76,42 +76,28 @@ else
 Найдите среднее арифметическое элементов в каждом
 столбце. */
 
-int[,] mass = new int[3, 4];
-double [] summ = new double[mass.GetLength(1)];
-double average;
+
+int[,] mass = new int[4, 4];
+double[] summ = new double[mass.GetLength(1)];
+double average = 0;
 
 for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
     {
         mass[i, j] = new Random().Next(0, 10);
+        Console.Write(mass[i, j] + "\t");
     }
+    Console.WriteLine();
 }
 
 for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
     {
-        Console.Write(mass[i, j] + " ");
         summ[i] += mass[j, i];
+        average = summ[i] / mass.GetLength(0);
     }
-    Console.WriteLine();
+    Console.Write($"Сумма по столбцу {i+1}: {summ[i]}");
+    Console.WriteLine($"\t Среднее по столбцу {i+1}: {average}");
 }
-System.Console.WriteLine();
-
-for (int i = 0; i < summ.Length; i++)
-{
-    average = summ[i] / mass.GetLength(0);
-    System.Console.WriteLine($"Среднее арифметическое {i + 1} столбца: {average}");
-}
-
-
-
-
-
-
-/* Console.Write("Среднее арифметическое каждого столбца: ");
-foreach (double element in summ)
-{
-    Console.Write(element / mass.GetLength(1) + ", ");
-} */
