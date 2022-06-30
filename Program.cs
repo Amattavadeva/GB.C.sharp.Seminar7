@@ -51,12 +51,12 @@ int n = int.Parse(Console.ReadLine());
 Console.WriteLine("Введите номер столбца элемента");
 int m = int.Parse(Console.ReadLine());
 
-int [,] mass = new int [4, 4];
+int[,] mass = new int[4, 4];
 for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
     {
-        mass[i, j] = new Random().Next(0,10);
+        mass[i, j] = new Random().Next(0, 10);
     }
 }
 
@@ -64,13 +64,13 @@ Print(mass);
 Console.WriteLine();
 
 if (n > mass.GetLength(0) || m > mass.GetLength(1))
-    {
-        Console.WriteLine("Такой позиции в массиве нет");
-    }
+{
+    Console.WriteLine("Такой позиции в массиве нет");
+}
 else
-    {
-        Console.WriteLine(mass[n, m]);
-    }    */
+{
+    Console.WriteLine(mass[n, m]);
+} */
 
 /* Задача 52: Задайте двумерный массив из целых чисел.
 Найдите среднее арифметическое элементов в каждом
@@ -102,7 +102,7 @@ for (int i = 0; i < Math.Min(mass.GetLength(0), mass.GetLength(1)); i++)
 {
     for (int j = 0; j < Math.Min(mass.GetLength(0), mass.GetLength(1)); j++)
     {
-        summ[i] += mass[j, i]; // новый массив сумм
+        summ[i] += mass[j, i];
     }
 }
 
