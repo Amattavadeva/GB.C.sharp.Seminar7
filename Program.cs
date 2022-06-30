@@ -79,27 +79,7 @@ else
 int[,] mass = new int[4, 4];
 double[] summ = new double[mass.GetLength(1)];
 double average = 0;
-
-void Print(int [,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            Console.Write(mass[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-}
-
-for (int i = 0; i < mass.GetLength(0); i++)
-{
-    for (int j = 0; j < mass.GetLength(1); j++)
-    {
-        mass[i, j] = new Random().Next(0, 10);
-    }
-}
-
+FillArray(mass);
 Print(mass);
 
 for (int i = 0; i < mass.GetLength(1); i++)
@@ -109,6 +89,30 @@ for (int i = 0; i < mass.GetLength(1); i++)
         summ[i] += mass[j, i];
     }
     average = summ[i] / mass.GetLength(0);
-    Console.Write($"Сумма по столбцу {i+1}: {summ[i]}");
-    Console.WriteLine($"\t Среднее арифметическое по столбцу {i+1}: {Math.Round(average, 2)}");
+    Console.Write($"Сумма по столбцу {i + 1}: {summ[i]}");
+    Console.WriteLine($"\t Среднее арифметическое по столбцу {i + 1}: {Math.Round(average, 2)}");
+}
+
+int[,] FillArray(int[,] array)
+{
+    for (int i = 0; i < mass.GetLength(0); i++)
+    {
+        for (int j = 0; j < mass.GetLength(1); j++)
+        {
+            mass[i, j] = new Random().Next(0, 10);
+        }
+    }
+    return array;
+}
+
+void Print(int[,] arr)
+{
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++)
+        {
+            Console.Write(mass[i, j] + "\t");
+        }
+        Console.WriteLine();
+    }
 }
