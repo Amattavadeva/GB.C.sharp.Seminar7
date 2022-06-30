@@ -76,19 +76,10 @@ else
 Найдите среднее арифметическое элементов в каждом
 столбце. */
 
-void Print(int[,] arr)
-{
-    for (int i = 0; i < arr.GetLength(0); i++)
-    {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            Console.Write(arr[i, j] + "\t");
-        }
-        Console.WriteLine();
-    }
-}
+int[,] mass = new int[3, 4];
+double [] summ = new double[mass.GetLength(1)];
+double average;
 
-int[,] mass = new int[4, 4];
 for (int i = 0; i < mass.GetLength(0); i++)
 {
     for (int j = 0; j < mass.GetLength(1); j++)
@@ -97,20 +88,30 @@ for (int i = 0; i < mass.GetLength(0); i++)
     }
 }
 
-int[] summ = new int[Math.Min(mass.GetLength(0), mass.GetLength(1))];
-for (int i = 0; i < Math.Min(mass.GetLength(0), mass.GetLength(1)); i++)
+for (int i = 0; i < mass.GetLength(0); i++)
 {
-    for (int j = 0; j < Math.Min(mass.GetLength(0), mass.GetLength(1)); j++)
+    for (int j = 0; j < mass.GetLength(1); j++)
     {
+        Console.Write(mass[i, j] + " ");
         summ[i] += mass[j, i];
     }
+    Console.WriteLine();
+}
+System.Console.WriteLine();
+
+for (int i = 0; i < summ.Length; i++)
+{
+    average = summ[i] / mass.GetLength(0);
+    System.Console.WriteLine($"Среднее арифметическое {i + 1} столбца: {average}");
 }
 
-Print(mass);
-Console.WriteLine();
 
-Console.Write("Среднее арифметическое каждого столбца: ");
+
+
+
+
+/* Console.Write("Среднее арифметическое каждого столбца: ");
 foreach (double element in summ)
 {
     Console.Write(element / mass.GetLength(1) + ", ");
-}
+} */
