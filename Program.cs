@@ -69,7 +69,7 @@ if (n > mass.GetLength(0) || m > mass.GetLength(1))
 }
 else
 {
-    Console.WriteLine(mass[n, m]);
+    Console.WriteLine(mass[n-1, m-1]);
 } */
 
 /* Задача 52: Задайте двумерный массив из целых чисел.
